@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { formatTime } from '../utils';
 
 // Import our toggleTimer action
 import { toggleTimer } from '../actions'
@@ -14,20 +15,18 @@ class TimerView extends Component {
 
   // Extract these specific props to use in the component
   const { index, toggleTimer, timer } = this.props
-    return (
+  return (
       <div>
-        <h2>{timer.name}</h2>
-        <h1>{timer.time}</h1>
-        <button
-            // This calls our toggleTimer action on the specific timer (specified by the index)
-            onClick={(e) => {
-                toggleTimer(index)
-            }}>
-            // Text of the button is determined by if the timer is running or not
-            {timer.isRunning ? "Stop" : "Start"}
-        </button>
+          <h2>{timer.name}</h2>
+          <h1>{formatTime(timer.time)}</h1> 
+          <button
+              onClick={(e) => {
+                  toggleTimer(index)
+              }}>
+              {timer.isRunning ? "Stop" : "Start"}
+          </button>
       </div>
-    )
+  )
   }
 }
 
