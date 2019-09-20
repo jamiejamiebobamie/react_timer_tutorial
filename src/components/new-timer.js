@@ -28,15 +28,15 @@ class NewTimer extends Component {
     )
   }
 }
->
+
 // Not needed for this component
 const mapStateToProps = (state) => {
   return {}
 }
->
+
 // Use 'mapDispatchToProps' to connect the 'newTimer' action creator to this component. Here is a stub for the component:
 const mapDispatchToProps = () => {
   return { addTimer }
 }
->
+
 export default connect(mapStateToProps, mapDispatchToProps())(NewTimer)
