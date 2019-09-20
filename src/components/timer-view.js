@@ -17,9 +17,10 @@ class TimerView extends Component {
   const { index, toggleTimer, timer } = this.props
   return (
       <div>
-          <h2>{timer.name}</h2>
-          <h1>{formatTime(timer.time)}</h1> 
+          <h2 className='timer-view-name__h2'>{timer.name}</h2>
+          <h1 className='timer-view-time__h1'>{formatTime(timer.time)}</h1>
           <button
+          className='timer-view__button'
               onClick={(e) => {
                   toggleTimer(index)
               }}>
