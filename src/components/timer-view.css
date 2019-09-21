@@ -1,0 +1,37 @@
+.timer-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 1em;
+}
+
+
+.timer-view-name__h2 {
+  margin: 0;
+  font-size: 1.25em;
+}
+
+.timer-view-time__h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.timer-view__button {
+  width: 78px;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  border: 1px solid #000;
+  border-radius: 0.5em;
+}
+
+.timer-view__button--start {
+  color: #000;
+  background-color: #fff;
+}
+
+.timer-view__button--stop {
+  color: #fff;
+  background-color: #000;
+}

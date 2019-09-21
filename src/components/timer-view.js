@@ -15,12 +15,13 @@ class TimerView extends Component {
 
   // Extract these specific props to use in the component
   const { index, toggleTimer, timer } = this.props
+  const buttonClass = timer.isRunning ? "stop" : "start";
   return (
       <div>
           <h2 className='timer-view-name__h2'>{timer.name}</h2>
           <h1 className='timer-view-time__h1'>{formatTime(timer.time)}</h1>
           <button
-          className='timer-view__button'
+          className={`timer-view__button timer-view__button--${buttonClass}`}
               onClick={(e) => {
                   toggleTimer(index)
               }}>
