@@ -11,7 +11,17 @@ import NewTimer from './components/new-timer'
 import ListTimers from './components/list-timers'
 import { update } from './actions'
 
-const store = createStore(reducers);
+import { loadState, saveState } from './utils'
+
+import throttle from 'lodash/throttle'
+
+
+const persistedState = loadState()
+const store = createStore(reducers, persistedState)
+
+store.subscribe(throttle(() => {
+  saveState(store.getState())
+}, 1000));
 
 class App extends Component {
   render() {
@@ -24,7 +34,7 @@ class App extends Component {
     lastUpdateTime = now
     store.dispatch(update(deltaTime))
   }, 50)
-  
+
     return (
       <Provider store={store}>
         <div className="App">
