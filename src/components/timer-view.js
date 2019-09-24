@@ -16,6 +16,9 @@ class TimerView extends Component {
   // Extract these specific props to use in the component
   const { index, toggleTimer, timer } = this.props
   const buttonClass = timer.isRunning ? "stop" : "start";
+
+  console.log(timer)
+
   return (
       <div>
           <h2 className='timer-view-name__h2'>Name{timer.name}</h2>
@@ -33,7 +36,7 @@ class TimerView extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {}
+  return { }
 }
 
 // Use the toggleTimer action for this component

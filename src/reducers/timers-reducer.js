@@ -1,6 +1,7 @@
 
 import { NEW_TIMER, TOGGLE_TIMER, UPDATE } from '../actions';
 import Timer from '../Timer'
+
 const timerReducer = (state = [], action) => {
   switch (action.type) {
 
@@ -26,7 +27,7 @@ const timerReducer = (state = [], action) => {
         return timer
       })
       return newState
-      
+
     default:
       return state;
   }

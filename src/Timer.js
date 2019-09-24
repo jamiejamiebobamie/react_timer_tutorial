@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
 
-class Timer extends Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            name:props.name,
-            time:0,
-            isRunning: false,
-        }
+
+class Timer {
+    constructor(name){
+        this.name = name
+        this.time = 0
+        this.isRunning = false
     }
 }
 
